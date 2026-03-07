@@ -20,13 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var partnersCarousel = document.querySelector('.elementor-element-c42684b .e-n-carousel.swiper');
   if (partnersCarousel) {
+    partnersCarousel.style.paddingLeft = '60px';
+    partnersCarousel.style.paddingRight = '60px';
     partnersCarousel.style.overflow = 'visible';
     new Swiper(partnersCarousel, {
-      slidesPerView: 2.2,
-      centeredSlides: false,
+      slidesPerView: 2.001,
       spaceBetween: 47,
       loop: true,
-      autoplay: { delay: 2000, disableOnInteraction: false, reverseDirection: true },
+      speed: 300,
+      autoplay: { delay: 2000, disableOnInteraction: true, reverseDirection: true },
       navigation: {
         nextEl: '.elementor-element-c42684b .e-n-carousel-navigation-next',
         prevEl: '.elementor-element-c42684b .e-n-carousel-navigation-prev',
