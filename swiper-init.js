@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     el.classList.remove('elementor-invisible');
   });
 
-  // Proof carousel - video testimonials
   var proofCarousel = document.querySelector('.elementor-element-303e837 .e-n-carousel.swiper');
   if (proofCarousel) {
     new Swiper(proofCarousel, {
@@ -19,10 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Partners carousel - 2 full columns + sliver on each side
   var partnersCarousel = document.querySelector('.elementor-element-c42684b .e-n-carousel.swiper');
   if (partnersCarousel) {
     partnersCarousel.style.overflow = 'visible';
+    partnersCarousel.style.width = '80%';
+    partnersCarousel.style.margin = '0 auto';
     new Swiper(partnersCarousel, {
       slidesPerView: 2,
       centeredSlides: true,
