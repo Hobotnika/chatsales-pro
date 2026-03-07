@@ -4,17 +4,33 @@ document.addEventListener('DOMContentLoaded', function() {
     el.classList.remove('elementor-invisible');
   });
 
-  // Init all Swiper carousels
-  document.querySelectorAll('.e-n-carousel.swiper').forEach(function(el) {
-    new Swiper(el, {
+  // Proof carousel (element 303e837) - video testimonials, 1 slide, slide from left
+  var proofCarousel = document.querySelector('.elementor-element-303e837 .e-n-carousel.swiper');
+  if (proofCarousel) {
+    new Swiper(proofCarousel, {
       slidesPerView: 1,
       spaceBetween: 53,
       loop: true,
-      autoplay: { delay: 3000 },
+      autoplay: { delay: 3000, disableOnInteraction: false },
       navigation: {
-        nextEl: el.parentElement.querySelector('.swiper-button-next, [aria-label="Next slide"]'),
-        prevEl: el.parentElement.querySelector('.swiper-button-prev, [aria-label="Previous slide"]'),
+        nextEl: '.elementor-element-303e837 .e-n-carousel-navigation-next',
+        prevEl: '.elementor-element-303e837 .e-n-carousel-navigation-prev',
       }
     });
-  });
+  }
+
+  // Partners carousel (element c42684b) - who we worked with, 2 per slide, slide from right
+  var partnersCarousel = document.querySelector('.elementor-element-c42684b .e-n-carousel.swiper');
+  if (partnersCarousel) {
+    new Swiper(partnersCarousel, {
+      slidesPerView: 2,
+      spaceBetween: 47,
+      loop: true,
+      autoplay: { delay: 3000, disableOnInteraction: false, reverseDirection: true },
+      navigation: {
+        nextEl: '.elementor-element-c42684b .e-n-carousel-navigation-next',
+        prevEl: '.elementor-element-c42684b .e-n-carousel-navigation-prev',
+      }
+    });
+  }
 });
