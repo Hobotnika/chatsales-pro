@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var partnersCarousel = document.querySelector('.elementor-element-c42684b .e-n-carousel.swiper');
   if (partnersCarousel) {
     partnersCarousel.style.overflow = 'visible';
-    partnersCarousel.style.width = '80%';
+    partnersCarousel.style.width = '70%';
     partnersCarousel.style.margin = '0 auto';
     new Swiper(partnersCarousel, {
       slidesPerView: 2,
