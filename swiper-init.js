@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var proofCarousel = document.querySelector('.elementor-element-303e837 .e-n-carousel.swiper');
   if (proofCarousel) {
     new Swiper(proofCarousel, {
-      slidesPerView: 1.3,
+      slidesPerView: 1.15,
       centeredSlides: true,
       spaceBetween: 53,
       loop: true,
@@ -19,13 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Partners carousel - who we worked with, peek on sides
+  // Partners carousel - 2 full columns + sliver on each side
   var partnersCarousel = document.querySelector('.elementor-element-c42684b .e-n-carousel.swiper');
   if (partnersCarousel) {
+    partnersCarousel.style.overflow = 'visible';
     new Swiper(partnersCarousel, {
-      slidesPerView: 2.3,
+      slidesPerView: 2,
       centeredSlides: true,
-      spaceBetween: 47,
+      spaceBetween: 24,
       loop: true,
       autoplay: { delay: 3000, disableOnInteraction: false, reverseDirection: true },
       navigation: {
