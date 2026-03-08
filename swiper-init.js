@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   // --- Hero staggered fade-in ---
-  // CSS in <head> sets opacity:0 with delays on cbf6d08, 38dbd40, 052846c
-  // Adding hero-visible to body triggers all three with their respective delays
   setTimeout(function() {
     document.body.classList.add('hero-visible');
   }, 100);
@@ -28,14 +26,20 @@ document.addEventListener('DOMContentLoaded', function() {
   if (partnersCarousel) {
     partnersCarousel.classList.add('offset-both');
     new Swiper(partnersCarousel, {
-      slidesPerView: 2.001,
-      spaceBetween: 47,
+      slidesPerView: window.innerWidth < 768 ? 1.001 : 2.001,
+      spaceBetween: window.innerWidth < 768 ? 20 : 47,
       loop: true,
       speed: 300,
       autoplay: { delay: 2000, disableOnInteraction: true, reverseDirection: false },
       navigation: {
         nextEl: '.elementor-element-c42684b .elementor-swiper-button-next',
         prevEl: '.elementor-element-c42684b .elementor-swiper-button-prev',
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2.001,
+          spaceBetween: 47,
+        }
       }
     });
   }
