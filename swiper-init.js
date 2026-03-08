@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
       spaceBetween: 53,
       loop: true,
       speed: 500,
-      autoplay: { delay: 2000, disableOnInteraction: true, reverseDirection: true },
+      autoplay: { delay: 5000, disableOnInteraction: true, reverseDirection: true },
       navigation: {
         nextEl: '.elementor-element-303e837 .e-n-carousel-navigation-next',
         prevEl: '.elementor-element-303e837 .e-n-carousel-navigation-prev',
