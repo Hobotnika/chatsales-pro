@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
       speed: 500,
       autoplay: { delay: 5000, disableOnInteraction: true, reverseDirection: true },
       navigation: {
-        nextEl: '.elementor-element-303e837 .e-n-carousel-navigation-next',
-        prevEl: '.elementor-element-303e837 .e-n-carousel-navigation-prev',
+        nextEl: '.elementor-element-303e837 .elementor-swiper-button-next',
+        prevEl: '.elementor-element-303e837 .elementor-swiper-button-prev',
       }
     });
   }
@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
       speed: 300,
       autoplay: { delay: 2000, disableOnInteraction: true, reverseDirection: false },
       navigation: {
-        nextEl: '.elementor-element-c42684b .e-n-carousel-navigation-next',
-        prevEl: '.elementor-element-c42684b .e-n-carousel-navigation-prev',
+        nextEl: '.elementor-element-c42684b .elementor-swiper-button-next',
+        prevEl: '.elementor-element-c42684b .elementor-swiper-button-prev',
       }
     });
   }
