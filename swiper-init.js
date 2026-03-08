@@ -33,22 +33,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // --- Scroll-triggered fade-in for buttons ---
-  // Find all elementor buttons and wrap their parent containers
+  // --- Scroll-triggered fade-in (opacity only, no movement) ---
   var style = document.createElement('style');
-  style.textContent = '.scroll-fade { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; } .scroll-fade.visible { opacity: 1; transform: translateY(0); }';
+  style.textContent = '.scroll-fade { opacity: 0; transition: opacity 0.8s ease; } .scroll-fade.visible { opacity: 1; }';
   document.head.appendChild(style);
 
-  // Target the two CTA buttons by their text content
   var allButtons = document.querySelectorAll('.elementor-button');
   allButtons.forEach(function(btn) {
     var text = btn.textContent.trim();
     if (text === 'Book A Call' || text === 'Full Explainer Guide') {
-      btn.closest('.elementor-widget') && btn.closest('.elementor-widget').classList.add('scroll-fade');
+      var widget = btn.closest('.elementor-widget');
+      if (widget) widget.classList.add('scroll-fade');
     }
   });
 
-  // Intersection Observer to trigger the animation
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
@@ -56,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.1 });
 
   document.querySelectorAll('.scroll-fade').forEach(function(el) {
     observer.observe(el);
