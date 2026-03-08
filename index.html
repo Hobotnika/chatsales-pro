@@ -100,6 +100,21 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .hero-visible .elementor-element-052846c { opacity: 1; }
 </style><style id="mobile-fix">
 @media (max-width: 767px) {
+  /* Reset header button to original - exclude from all mobile button overrides */
+  .elementor-element-491b2b3 .elementor-button {
+    font-size: 18px !important;
+    padding: 8px 16px !important;
+    width: auto !important;
+    display: inline-flex !important;
+    box-sizing: border-box !important;
+  }
+  .elementor-element-491b2b3,
+  .elementor-element-491b2b3 .elementor-button-wrapper {
+    width: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
   /* Make proof carousel video fill full slide width */
   .elementor-element-303e837 .swiper-slide .elementor-widget-video {
     width: 100% !important;
