@@ -100,6 +100,19 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .hero-visible .elementor-element-052846c { opacity: 1; }
 </style><style id="mobile-fix">
 @media (max-width: 767px) {
+  /* Force proof carousel slides to be 16:9 rectangular */
+  .elementor-element-303e837 .swiper-slide {
+    height: auto !important;
+    aspect-ratio: 16/9 !important;
+  }
+  .elementor-element-303e837 .elementor-video,
+  .elementor-element-303e837 .elementor-widget-video {
+    height: auto !important;
+    aspect-ratio: 16/9 !important;
+  }
+}
+
+@media (max-width: 767px) {
   .elementor-widget-button {
     width: 100% !important;
   }
