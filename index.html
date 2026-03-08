@@ -98,6 +98,26 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .hero-visible .elementor-element-cbf6d08,
 .hero-visible .elementor-element-38dbd40,
 .hero-visible .elementor-element-052846c { opacity: 1; }
+</style><style id="mobile-fix">
+@media (max-width: 767px) {
+  /* Remove large min-heights that cause empty gaps on mobile */
+  .elementor-section,
+  .e-con,
+  .elementor-element {
+    min-height: 0 !important;
+  }
+  /* Fix excessive padding on mobile sections */
+  .elementor-section > .elementor-container,
+  .e-con-inner {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  /* Fix video section gap */
+  .elementor-widget-video,
+  .elementor-widget-n-carousel {
+    margin-bottom: 0 !important;
+  }
+}
 </style></head>
 <body data-rsssl="1" class="home wp-singular page-template page-template-elementor_header_footer page page-id-14 wp-embed-responsive wp-theme-hello-elementor theme-default elementor-default elementor-template-full-width elementor-kit-5 elementor-page elementor-page-14">
 
