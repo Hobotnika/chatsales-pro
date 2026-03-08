@@ -100,6 +100,40 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .hero-visible .elementor-element-052846c { opacity: 1; }
 </style><style id="mobile-fix">
 @media (max-width: 767px) {
+  .elementor-element-491b2b3 .elementor-button {
+    font-size: 13px !important;
+    padding: 8px 14px !important;
+    white-space: nowrap !important;
+    width: auto !important;
+  }
+  .elementor-element-491b2b3,
+  .elementor-element-491b2b3 .elementor-button-wrapper {
+    width: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Fix header layout so logo and button fit side by side */
+  .elementor-nav-menu,
+  header .elementor-widget-button .elementor-button {
+    font-size: 13px !important;
+    padding: 8px 14px !important;
+    white-space: nowrap !important;
+  }
+  header .elementor-widget-button {
+    width: auto !important;
+  }
+  header .elementor-widget-button .elementor-button-wrapper {
+    width: auto !important;
+  }
+  /* Make sure header container doesnt overflow */
+  .e-n-header,
+  .elementor-section.elementor-element:first-child {
+    overflow: visible !important;
+  }
+}
+
+@media (max-width: 767px) {
   /* Force proof carousel slides to be 16:9 rectangular */
   .elementor-element-303e837 .swiper-slide {
     height: auto !important;
