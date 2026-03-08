@@ -99,6 +99,24 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .hero-visible .elementor-element-38dbd40,
 .hero-visible .elementor-element-052846c { opacity: 1; }
 </style><style id="mobile-fix">
+/* Position proof carousel arrows on outer edges of slides */
+.elementor-element-303e837 .elementor-widget-container {
+  position: relative;
+}
+.elementor-element-303e837 .elementor-swiper-button-prev,
+.elementor-element-303e837 .elementor-swiper-button-next {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 10 !important;
+}
+.elementor-element-303e837 .elementor-swiper-button-prev {
+  left: 0px !important;
+}
+.elementor-element-303e837 .elementor-swiper-button-next {
+  right: 0px !important;
+}
+
 @media (max-width: 767px) {
   .elementor-widget-button .elementor-button {
     width: 100% !important;
