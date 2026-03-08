@@ -5,11 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var proofCarousel = document.querySelector('.elementor-element-303e837 .e-n-carousel.swiper');
   if (proofCarousel) {
+    proofCarousel.classList.add('offset-both');
     new Swiper(proofCarousel, {
-      slidesPerView: 1.15,
-      centeredSlides: true,
+      slidesPerView: 1.001,
       spaceBetween: 53,
       loop: true,
+      speed: 500,
       autoplay: { delay: 3000, disableOnInteraction: false },
       navigation: {
         nextEl: '.elementor-element-303e837 .e-n-carousel-navigation-next',
