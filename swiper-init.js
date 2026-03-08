@@ -33,13 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // --- Scroll-triggered fade-in (opacity only, no movement) ---
+  // --- Scroll fade-in for bottom CTA buttons ---
   var style = document.createElement('style');
   style.textContent = '.scroll-fade { opacity: 0; transition: opacity 0.8s ease; } .scroll-fade.visible { opacity: 1; }';
   document.head.appendChild(style);
 
-  var allButtons = document.querySelectorAll('.elementor-button');
-  allButtons.forEach(function(btn) {
+  document.querySelectorAll('.elementor-button').forEach(function(btn) {
     var text = btn.textContent.trim();
     if (text === 'Book A Call' || text === 'Full Explainer Guide') {
       var widget = btn.closest('.elementor-widget');
@@ -59,5 +58,63 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.scroll-fade').forEach(function(el) {
     observer.observe(el);
   });
+
+  // --- Hero section staggered entrance animations ---
+  // headline: fade in immediately, subheadline: 300ms delay, hero buttons: 600ms delay
+  var heroStyle = document.createElement('style');
+  heroStyle.textContent = [
+    '.hero-fade { opacity: 0; transition: opacity 0.8s ease; }',
+    '.hero-fade.hero-delay-0 { transition-delay: 0ms; }',
+    '.hero-fade.hero-delay-1 { transition-delay: 300ms; }',
+    '.hero-fade.hero-delay-2 { transition-delay: 600ms; }',
+    '.hero-fade.visible { opacity: 1; }'
+  ].join(' ');
+  document.head.appendChild(heroStyle);
+
+  // Find hero buttons (top of page) - these are the ones NOT at the bottom
+  var allButtons = document.querySelectorAll('.elementor-button');
+  var heroButtons = [];
+  allButtons.forEach(function(btn) {
+    var text = btn.textContent.trim();
+    if (text === 'Book A Call' || text === 'Full Explainer Guide') {
+      // Check if this is in the hero (top portion of page)
+      var rect = btn.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        heroButtons.push(btn.closest('.elementor-widget'));
+      }
+    }
+  });
+
+  // Find headline and subheadline in hero section (first heading + first text widget near top)
+  var heroSection = document.querySelector('.elementor-section, .e-con');
+  var headings = document.querySelectorAll('h1, h2');
+  var mainHeading = headings[0];
+  var subHeading = null;
+
+  // Subheadline is typically a text widget right after the main heading
+  if (mainHeading) {
+    var next = mainHeading.closest('.elementor-widget');
+    if (next && next.nextElementSibling) {
+      subHeading = next.nextElementSibling;
+    }
+  }
+
+  if (mainHeading) {
+    var hw = mainHeading.closest('.elementor-widget');
+    if (hw) { hw.classList.add('hero-fade', 'hero-delay-0'); }
+  }
+  if (subHeading) {
+    subHeading.classList.add('hero-fade', 'hero-delay-1');
+  }
+  heroButtons.forEach(function(btn) {
+    if (btn) btn.classList.add('hero-fade', 'hero-delay-2');
+  });
+
+  // Trigger hero animations after a tiny paint delay
+  setTimeout(function() {
+    document.querySelectorAll('.hero-fade').forEach(function(el) {
+      el.classList.add('visible');
+    });
+  }, 50);
 
 });
