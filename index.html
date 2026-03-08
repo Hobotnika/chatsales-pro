@@ -13,6 +13,21 @@
 <style id="wp-img-auto-sizes-contain-inline-css">
 img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+
+@media (max-width: 767px) {
+  /* Full width buttons on mobile - exclude header buttons */
+  .elementor-widget-button:not(.elementor-element-491b2b3):not(.elementor-element-6e1d9f0) {
+    width: 100% !important;
+  }
+  .elementor-widget-button:not(.elementor-element-491b2b3):not(.elementor-element-6e1d9f0) .elementor-button-wrapper {
+    width: 100% !important;
+  }
+  .elementor-widget-button:not(.elementor-element-491b2b3):not(.elementor-element-6e1d9f0) .elementor-button {
+    width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+}
 </style>
 
 <style id="wp-emoji-styles-inline-css">
